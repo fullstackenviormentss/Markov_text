@@ -43,4 +43,4 @@ while 1:
         print("\nChain done:")
         break
 
-print("\n", chain)
+print("\n" + chain)
