@@ -9,12 +9,18 @@ random key. Use the key to find
 the next word, and then use the
 current last 2 words to find a
 new word
+
+$WORD_LIMIT is the maximum 
+amount of words a chain can
+contain
 """
+
+WORD_LIMIT = 100
 
 pickled_file = "trained.pickle"
 chain = ""
 
-print("Loading trained dict")
+print("Loading dictionary")
 with open(pickled_file, "rb") as f:
     trained_dict = pickle.load(f)
 
@@ -39,7 +45,7 @@ while 1:
         words_processed += 1
         print("\rWords processed: {}".format(words_processed), end="")
 
-        if words_processed > 1000:
+        if words_processed = WORD_LIMIT:
             break  # Prevents loops
     except KeyError:
         print("\nChain done:")

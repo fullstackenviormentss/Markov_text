@@ -31,7 +31,11 @@ The steps taken to generate this string are:
  - Use the last two words in the string as a new key
  - If there is a value in the dictionary, go back to step 3 with the new key, otherwise, stop and show what has been made
 
-Currently it will stop adding to the string if either there is no value for a key, or if the amount of words used goes over `1000`. This is to stop loops or insanely long chains.
+**Notes:**
+
+ - At the top of the script there is a variable, `WORD_LIMIT`: this is the maximum amount of words that can be in a chain
+
+ - Currently it will stop adding to the string if either there is no value for a key, or if the amount of words used goes over `WORD_LIMIT`. This is to stop loops or insanely long chains.
 
 # Resources
 
