@@ -13,7 +13,11 @@ the dictionary would look like:
 
 This is based off of [this stackoverflow answer](https://stackoverflow.com/a/5307230)
 
-At the top of the script there is a variable, `WORD_LIMIT`: this limits the amount of words read from the text file. Change this to however many you want, or set it to `None` to read all the words
+**Notes:**
+
+ - All whitespace in `to_read.txt` is ignored
+
+ - At the top of the script there is a variable, `WORD_LIMIT`: this limits the amount of words read from the text file. Change this to however many you want, or set it to `None` to read all the words
 
 ## `generate.py`
 
