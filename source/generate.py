@@ -45,10 +45,10 @@ while 1:
         words_processed += 1
         print("\rWords processed: {}".format(words_processed), end="")
 
-        if words_processed = WORD_LIMIT:
+        if words_processed == WORD_LIMIT:
             break  # Prevents loops
     except KeyError:
-        print("\nChain done:")
         break
 
+print("\nChain done:")
 print("\n" + chain)
