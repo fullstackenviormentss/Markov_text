@@ -1,6 +1,15 @@
 # Markov_text
 
-Generate text using Markov chains
+Give a large amount of text as an input and this will generate text from that input using Markov chains
+
+Usage:
+
+ - Find whatever text you want to use and put it in `source/` as `to_read.txt` (it should be plain ASCII text)
+ - Edit the `WORD_LIMIT` variables in both Python scripts to your preference (read below)
+ - Open a terminal / command prompt in `source/`
+ - Run `python3 train_mkv_dict.py`
+ - Run `python3 generate.py`
+ - You should now have some *interesting* text to read
 
 ## `train_mkv_dict.py`
 
@@ -42,3 +51,5 @@ The steps taken to generate this string are:
 A good `to_read.txt` to try is [this shakespear play](https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt). Before using it, I would remove the copyright warnings (they appear throughout the text)
 
 There are thousands of plaintext books available [here](https://www.gutenberg.org/wiki/Main_Page)
+
+You can find plaintext transcripts of films and TV series [here](https://www.springfieldspringfield.co.uk)

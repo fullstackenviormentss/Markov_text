@@ -8,7 +8,7 @@ dictionary of {2 words : [next word(s)]}
 then save to $pickled_file
 """
 
-WORD_LIMIT = 100000  # None for all the words in the file
+WORD_LIMIT = None  # None for all the words in the file
 
 training_file = "to_read.txt"
 plain_text = ""
