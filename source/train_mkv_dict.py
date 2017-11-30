@@ -4,7 +4,7 @@ import pickle
 train_markov_dict.py
 
 Read $training_file and construct a
-dictionary of {2 words : next word}
+dictionary of {2 words : [next word(s)]}
 then save to $pickled_file
 """
 
@@ -35,7 +35,11 @@ w1 = word_list[0]
 w2 = word_list[1]
 
 for word in word_list[2:WORD_LIMIT]:
-    trained_dict[w1 + " " + w2] = word
+    new_key = w1 + " " + w2
+    if new_key in trained_dict:
+        trained_dict[new_key].append(word)
+    else:
+        trained_dict[new_key] = [word]
     w1 = w2
     w2 = word
     words_processed += 1

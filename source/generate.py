@@ -29,7 +29,9 @@ w2 = key.split(" ")[1]
 while 1:
     try:
         key = "{} {}".format(w1, w2)
-        new_word = trained_dict[key]
+        values = trained_dict[key]
+        new_word = random.choice(values)
+        
         chain += new_word + " "
         w1 = w2
         w2 = new_word
