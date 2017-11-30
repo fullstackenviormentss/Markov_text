@@ -1,5 +1,5 @@
-# Repository unique files
-shakespear.txt
+# Training plaintext files
+*.txt
 
 # Serialized data
 *.pickle
