@@ -4,6 +4,10 @@ import random
 """
 generate.py
 
+All strings are acutally byte
+strings so that things like emoji
+are preserved
+
 Read $pickled_file and choose a
 random key. Use the key to find
 the next word, and then use the
@@ -16,9 +20,11 @@ contain
 """
 
 WORD_LIMIT = 100
+BYTE_SPACE = b" "
+print("Word limit:", WORD_LIMIT)
 
 pickled_file = "trained.pickle"
-chain = ""
+chain = b""
 
 print("Loading dictionary")
 with open(pickled_file, "rb") as f:
@@ -26,29 +32,30 @@ with open(pickled_file, "rb") as f:
 
 print("Generating chain...")
 key = random.choice(list(trained_dict))
-chain += key + " "
 
-words_processed = 2
-w1 = key.split(" ")[0]
-w2 = key.split(" ")[1]
+print("Starting key:", key)
+chain += key
+
+NUMBER_OF_KEY_WORDS = len(key.split(BYTE_SPACE))
+words_processed = NUMBER_OF_KEY_WORDS
+print("Number of words in each key:", NUMBER_OF_KEY_WORDS)
 
 while 1:
     try:
-        key = "{} {}".format(w1, w2)
+        key =  BYTE_SPACE.join(chain.split(BYTE_SPACE)[(-NUMBER_OF_KEY_WORDS):])
+
         values = trained_dict[key]
         new_word = random.choice(values)
-        
-        chain += new_word + " "
-        w1 = w2
-        w2 = new_word
 
+        chain += (BYTE_SPACE + new_word)
         words_processed += 1
-        print("\rWords processed: {}".format(words_processed), end="")
 
         if words_processed == WORD_LIMIT:
-            break  # Prevents loops
+            break  # Helps prevent loops
     except KeyError:
         break
 
-print("\nChain done:")
-print("\n" + chain)
+print("Words processed: {}".format(words_processed))
+print("Chain done:")
+print()
+print(chain)
