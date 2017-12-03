@@ -8,12 +8,6 @@ All strings are acutally byte
 strings so that things like emoji
 are preserved
 
-Read $pickled_file and choose a
-random key. Use the key to find
-the next word, and then use the
-current last 2 words to find a
-new word
-
 $WORD_LIMIT is the maximum 
 amount of words a chain can
 contain
